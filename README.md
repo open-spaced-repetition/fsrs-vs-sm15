@@ -1,6 +1,6 @@
 # FSRS vs. SM-18
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 It is a simple comparsion between FSRS and SM-18. There are two notebooks to run the comparsion. `convert.ipynb` converts the SM-18 data to the same format as FSRS. `compare.ipynb` compares the two spaced repetition algorithms.
@@ -21,6 +21,7 @@ Due to the difference between the workflow of SuperMemo and Anki, it is not easy
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/WinstonWantsAUserName"><img src="https://avatars.githubusercontent.com/u/99696589?v=4?s=100" width="100px;" alt="Winston"/><br /><sub><b>Winston</b></sub></a><br /><a href="#data-WinstonWantsAUserName" title="Data">🔣</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/jakandy"><img src="https://avatars.githubusercontent.com/u/51024207?v=4?s=100" width="100px;" alt="andyjak"/><br /><sub><b>andyjak</b></sub></a><br /><a href="#data-jakandy" title="Data">🔣</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/leee-z"><img src="https://avatars.githubusercontent.com/u/48952110?v=4?s=100" width="100px;" alt="leee_"/><br /><sub><b>leee_</b></sub></a><br /><a href="#data-leee-z" title="Data">🔣</a></td>
     </tr>
   </tbody>
 </table>
