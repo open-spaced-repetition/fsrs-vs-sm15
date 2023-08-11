@@ -3,7 +3,11 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-It is a simple comparsion between FSRS and SM-18. There are two notebooks to run the comparsion. `convert.ipynb` converts the SM-18 data to the same format as FSRS. `compare.ipynb` compares the two spaced repetition algorithms.
+It is a simple comparsion between FSRS and SM-18. [compare.ipynb](./compare.ipynb) is the notebook for the comparsion. It has three features:
+
+1. Filter out Topic and Concept in your `Repetition History.txt` and mask the Item title for privacy.
+2. Convert `Repetition History.txt` to a format that can be used in FSRS.
+3. Train the FSRS model with your data and compare the result with SM-18.
 
 Due to the difference between the workflow of SuperMemo and Anki, it is not easy to compare the two algorithms. I tried to make the comparison as fair as possible. Here is some notes:
 - The first interval in SuperMemo is the duration between creating the card and the first review. In Anki, the first interval is the duration between the first review and the second review. So I removed the first record of each card in SM-18 data.
