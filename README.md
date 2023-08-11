@@ -6,6 +6,15 @@ Due to the difference between the workflow of SuperMemo and Anki, it is not easy
 - The first interval in SuperMemo is the duration between creating the card and the first review. In Anki, the first interval is the duration between the first review and the second review. So I removed the first record of each card in SM-18 data.
 - There are six grades in SuperMemo, but only four grades in Anki. So I merged 0, 1 and 2 in SuperMemo to 1 in Anki, and mapped 3, 4, and 5 in SuperMemo to 2, 3, and 4 in Anki.
 - I use the expFI recorded in data as the prediction of SM-18. The probabilty of recall from SM-18 is calculated by `1 - expFI/100`.
-- The original SM-18 data is from Leee, Winston, Andyjak and me. So the results are based on the data from Leee and me. It may be different from the result of other SM-18 users.
+- The results are based on the data from a small group of people. It may be different from the result of other SM-18 users.
 
-Thanks to Leee, Winston and Andyjak, who shared their SM-18 repetition history data with me.
+## Contributors
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
