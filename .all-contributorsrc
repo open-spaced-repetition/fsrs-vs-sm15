@@ -51,12 +51,21 @@
       "contributions": [
         "data"
       ]
+    },
+    {
+      "login": "guillem-palau-salva",
+      "name": "Guillem Palau-Salvà",
+      "avatar_url": "https://avatars.githubusercontent.com/u/8341295?v=4",
+      "profile": "https://www.pleasurable-learning.com",
+      "contributions": [
+        "data"
+      ]
     }
   ],
   "contributorsPerLine": 7,
   "skipCi": true,
   "repoType": "github",
   "repoHost": "https://github.com",
-  "projectName": "fsrs-vs-sm18",
+  "projectName": "fsrs-vs-sm15",
   "projectOwner": "open-spaced-repetition"
 }
