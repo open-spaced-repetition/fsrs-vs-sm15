@@ -1,20 +1,24 @@
-# FSRS vs. SM-18
+# FSRS vs SM-15
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-It is a simple comparsion between FSRS and SM-18. [compare.ipynb](./compare.ipynb) is the notebook for the comparsion. It has three features:
+It is a simple comparsion between FSRS and SM-15. [compare.ipynb](./compare.ipynb) is the notebook for the comparsion. It has three features:
 
 1. Filter out Topic and Concept in your `Repetition History.txt` and mask the Item title for privacy.
 2. Convert `Repetition History.txt` to a format that can be used in FSRS.
-3. Train the FSRS model with your data and compare the result with SM-18.
+3. Train the FSRS model with your data and compare the result with SM-15.
 
 Due to the difference between the workflow of SuperMemo and Anki, it is not easy to compare the two algorithms. I tried to make the comparison as fair as possible. Here is some notes:
-- The first interval in SuperMemo is the duration between creating the card and the first review. In Anki, the first interval is the duration between the first review and the second review. So I removed the first record of each card in SM-18 data.
+- The first interval in SuperMemo is the duration between creating the card and the first review. In Anki, the first interval is the duration between the first review and the second review. So I removed the first record of each card in SM-15 data.
 - There are six grades in SuperMemo, but only four grades in Anki. So I merged 0, 1 and 2 in SuperMemo to 1 in Anki, and mapped 3, 4, and 5 in SuperMemo to 2, 3, and 4 in Anki.
-- I use the expFI recorded in data as the prediction of SM-18. The probabilty of recall from SM-18 is calculated by `1 - expFI/100`.
-- To ensure FSRS has the same information as SM-18, I implement an [online learning](https://en.wikipedia.org/wiki/Online_machine_learning) version of FSRS. In FSRS online, each repetition is only used once. The repetitions are sorted by the review date ascending. Then FSRS will make prediction one by one and update the model after each prediction. So FSRS online has zero knowledge of the future reviews as SM-18 does.
-- The results are based on the data from a small group of people. It may be different from the result of other SM-18 users.
+- I use the expFI recorded in data as the prediction of SM-15. The probabilty of recall from SM-15 is calculated by `1 - expFI/100`. Reference: [Repetition history](https://help.supermemo.org/wiki/Repetition_history#Data_columns)
+- To ensure FSRS has the same information as SM-15, I implement an [online learning](https://en.wikipedia.org/wiki/Online_machine_learning) version of FSRS. In FSRS online, each repetition is only used once. The repetitions are sorted by the review date ascending. Then FSRS will make prediction one by one and update the model after each prediction. So FSRS online has zero knowledge of the future reviews as SM-15 does.
+- The results are based on the data from a small group of people. It may be different from the result of other SuperMemo users.
+
+## Why not SM-18?
+
+Due to the limitation of SuperMemo 18, I can't export the predictions of SM-18. So I can't compare SM-18 with FSRS. If you know how to export the predictions of SM-18, please let me know.
 
 ## Contributors
 
