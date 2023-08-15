@@ -1,6 +1,6 @@
 # FSRS vs SM-15
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 It is a simple comparsion between FSRS and SM-15. [compare.ipynb](./compare.ipynb) is the notebook for the comparsion. It has three features:
@@ -35,6 +35,9 @@ Due to the limitation of SuperMemo 18, I can't export the predictions of SM-18. 
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/reallyyy"><img src="https://avatars.githubusercontent.com/u/39750041?v=4?s=100" width="100px;" alt="reallyyy"/><br /><sub><b>reallyyy</b></sub></a><br /><a href="#data-reallyyy" title="Data">🔣</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://www.pleasurable-learning.com"><img src="https://avatars.githubusercontent.com/u/8341295?v=4?s=100" width="100px;" alt="Guillem Palau-Salvà"/><br /><sub><b>Guillem Palau-Salvà</b></sub></a><br /><a href="#data-guillem-palau-salva" title="Data">🔣</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/KKKphelps"><img src="https://avatars.githubusercontent.com/u/58903647?v=4?s=100" width="100px;" alt="Pariance"/><br /><sub><b>Pariance</b></sub></a><br /><a href="#data-KKKphelps" title="Data">🔣</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Satomi0626"><img src="https://avatars.githubusercontent.com/u/90490589?v=4?s=100" width="100px;" alt="Ada"/><br /><sub><b>Ada</b></sub></a><br /><a href="#data-Satomi0626" title="Data">🔣</a></td>
     </tr>
   </tbody>
 </table>
