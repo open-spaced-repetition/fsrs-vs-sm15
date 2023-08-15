@@ -1,6 +1,6 @@
 # FSRS vs SM-15
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 It is a simple comparsion between FSRS and SM-15. [compare.ipynb](./compare.ipynb) is the notebook for the comparsion. It has three features:
@@ -39,6 +39,7 @@ Due to the limitation of SuperMemo 18, I can't export the predictions of SM-18. 
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Satomi0626"><img src="https://avatars.githubusercontent.com/u/90490589?v=4?s=100" width="100px;" alt="Ada"/><br /><sub><b>Ada</b></sub></a><br /><a href="#data-Satomi0626" title="Data">🔣</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://www.zhihu.com/people/L.M.Sherlock"><img src="https://avatars.githubusercontent.com/u/32575846?v=4?s=100" width="100px;" alt="Jarrett Ye"/><br /><sub><b>Jarrett Ye</b></sub></a><br /><a href="https://github.com/open-spaced-repetition/fsrs-vs-sm15/commits?author=L-M-Sherlock" title="Code">💻</a> <a href="#data-L-M-Sherlock" title="Data">🔣</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/VSpade7"><img src="https://avatars.githubusercontent.com/u/46594083?v=4?s=100" width="100px;" alt="Spade7"/><br /><sub><b>Spade7</b></sub></a><br /><a href="#data-vspade7" title="Data">🔣</a></td>
     </tr>
   </tbody>
 </table>
