@@ -1,3 +1,5 @@
 *.csv
 *.tsv
 Repetition History.txt
+.idea/*
+.DS_Store
