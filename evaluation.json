@@ -295,5 +295,32 @@
             "universal_metric_by_fsrs_offline": 0.08507010546825809,
             "universal_metric_by_fsrs_online": 0.07124763754158055
         }
+    },
+    {
+        "user": "overflowcat",
+        "date": "2023-08-15",
+        "size": 1735,
+        "fsrs_offline": {
+            "R-squared": 0.4101424534688599,
+            "RMSE": 0.13980513188633262,
+            "MAE": 0.11457715225178444,
+            "log_loss": 0.6605424294964756,
+            "universal_metric_by_sm15": 0.10667317959458085
+        },
+        "fsrs_online": {
+            "R-squared": 0.11739272181623261,
+            "RMSE": 0.16371676188790726,
+            "MAE": 0.1354168215916849,
+            "log_loss": 0.6834470123329021,
+            "universal_metric_by_sm15": 0.09165338136929492
+        },
+        "sm15": {
+            "R-squared": -1.0070337000157745,
+            "RMSE": 0.20543637423167757,
+            "MAE": 0.17524495677233434,
+            "log_loss": 0.8136100677964329,
+            "universal_metric_by_fsrs_offline": 0.1267878406039126,
+            "universal_metric_by_fsrs_online": 0.13085019369438056
+        }
     }
 ]
