@@ -1,6 +1,6 @@
 # FSRS vs SM-15
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-11-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-12-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 It is a simple comparsion between FSRS and SM-15. [compare.ipynb](./compare.ipynb) is the notebook for the comparsion. It has three features:
@@ -41,6 +41,7 @@ Due to the limitation of SuperMemo 18, I can't export the predictions of SM-18. 
       <td align="center" valign="top" width="14.28%"><a href="https://www.zhihu.com/people/L.M.Sherlock"><img src="https://avatars.githubusercontent.com/u/32575846?v=4?s=100" width="100px;" alt="Jarrett Ye"/><br /><sub><b>Jarrett Ye</b></sub></a><br /><a href="https://github.com/open-spaced-repetition/fsrs-vs-sm15/commits?author=L-M-Sherlock" title="Code">💻</a> <a href="#data-L-M-Sherlock" title="Data">🔣</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/VSpade7"><img src="https://avatars.githubusercontent.com/u/46594083?v=4?s=100" width="100px;" alt="Spade7"/><br /><sub><b>Spade7</b></sub></a><br /><a href="#data-vspade7" title="Data">🔣</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/2Lavine"><img src="https://avatars.githubusercontent.com/u/43613598?v=4?s=100" width="100px;" alt="bigidea"/><br /><sub><b>bigidea</b></sub></a><br /><a href="#data-2Lavine" title="Data">🔣</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://blog.xinshijiededa.men"><img src="https://avatars.githubusercontent.com/u/20166026?v=4?s=100" width="100px;" alt="ᡥᠠᡳᡤᡳᠶᠠ ᡥᠠᠯᠠ·ᠨᡝᡴᠣ 猫"/><br /><sub><b>ᡥᠠᡳᡤᡳᠶᠠ ᡥᠠᠯᠠ·ᠨᡝᡴᠣ 猫</b></sub></a><br /><a href="#data-OverflowCat" title="Data">🔣</a></td>
     </tr>
   </tbody>
 </table>
