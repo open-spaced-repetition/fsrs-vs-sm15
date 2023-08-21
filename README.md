@@ -1,6 +1,6 @@
 # FSRS vs SM-15
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-14-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-15-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 It is a simple comparsion between FSRS and SM-15. [compare.ipynb](./compare.ipynb) is the notebook for the comparsion. It has three features:
@@ -44,6 +44,9 @@ Due to the limitation of SuperMemo 18, I can't export the predictions of SM-18. 
       <td align="center" valign="top" width="14.28%"><a href="http://blog.xinshijiededa.men"><img src="https://avatars.githubusercontent.com/u/20166026?v=4?s=100" width="100px;" alt="ᡥᠠᡳᡤᡳᠶᠠ ᡥᠠᠯᠠ·ᠨᡝᡴᠣ 猫"/><br /><sub><b>ᡥᠠᡳᡤᡳᠶᠠ ᡥᠠᠯᠠ·ᠨᡝᡴᠣ 猫</b></sub></a><br /><a href="#data-OverflowCat" title="Data">🔣</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/wah123wah123"><img src="https://avatars.githubusercontent.com/u/62554369?v=4?s=100" width="100px;" alt="ZebesYoshi"/><br /><sub><b>ZebesYoshi</b></sub></a><br /><a href="#data-wah123wah123" title="Data">🔣</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/jiangege"><img src="https://avatars.githubusercontent.com/u/4214901?v=4?s=100" width="100px;" alt="jiangege"/><br /><sub><b>jiangege</b></sub></a><br /><a href="#data-jiangege" title="Data">🔣</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/WolfSlytherin"><img src="https://avatars.githubusercontent.com/u/20725348?v=4?s=100" width="100px;" alt="WolfSlytherin"/><br /><sub><b>WolfSlytherin</b></sub></a><br /><a href="#data-WolfSlytherin" title="Data">🔣</a></td>
     </tr>
   </tbody>
 </table>
