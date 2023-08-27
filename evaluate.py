@@ -51,7 +51,7 @@ Cohen's d: -0.21759828991391236
 metric: log_loss, t-statistic: -122.84357886657645, p-value: 0.0, df: 514624.0
 The performance difference between FSRS and SM15 is statistically significant.
 Cohen's d: -0.34248175325355346
-metric: universal_metric, t-statistic: -328.8964520078117, p-value: 0.0, df: 514624.0
+metric: universal_metric, t-statistic: -329.0947639176226, p-value: 0.0, df: 514624.0
 The performance difference between FSRS and SM15 is statistically significant.
-Cohen's d: -0.9169468568222914
+Cohen's d: -0.9174997405072971
 '''

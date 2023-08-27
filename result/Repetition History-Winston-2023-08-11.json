@@ -7,7 +7,7 @@
     "SM15": {
         "RMSE": 0.4210242375286599,
         "log_loss": 0.5954456988360884,
-        "universal_metric": 0.0997347649277551
+        "universal_metric": 0.09998283037680973
     },
     "user": "Winston",
     "date": "2023-08-11",

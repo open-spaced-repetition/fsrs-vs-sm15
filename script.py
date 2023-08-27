@@ -235,8 +235,8 @@ def compare(revlogs):
 
     cross_comparison = revlogs[['sm15_p', 'p', 'y']].copy()
 
-    def get_bin(x):
-        return (np.log(np.exp(3 * x).round()) / 3).round(3)
+    def get_bin(x, bins=20):
+        return (np.log(np.exp(np.log(bins) * x).round()) / np.log(bins)).round(3)
 
     cross_comparison['SM15_B-W'] = cross_comparison['sm15_p'] - cross_comparison['y']
     cross_comparison['SM15_bin'] = cross_comparison['sm15_p'].map(get_bin)
@@ -283,8 +283,6 @@ if __name__ == "__main__":
             try:
                 _, user, year, month, day = file.stem.split('-')
             except:
-                continue
-            if pathlib.Path(f'result/{file.stem}.json').exists():
                 continue
             txt_to_csv(file)
             revlogs = data_preprocessing(file.with_suffix('.csv'))
