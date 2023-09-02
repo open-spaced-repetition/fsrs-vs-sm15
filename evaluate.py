@@ -27,15 +27,21 @@ if __name__ == "__main__":
             SM15.append(result["SM15"])
             sizes.append(result["size"])
 
+    print(f"Total users: {len(sizes)}")
 
     sizes = np.array(sizes)
-    for metric in ("RMSE", "log_loss", "universal_metric"):
+    print(f"Total size: {sizes.sum()}")
+    for metric in ("log_loss", "RMSE", "universal_metric"):
+        print(f"metric: {metric}")
+
         FSRS_metrics = np.array([item[metric] for item in FSRS])
         SM15_metrics = np.array([item[metric] for item in SM15])
 
+        print(f"FSRS mean: {np.average(FSRS_metrics, weights=sizes):.4f}, SM17 mean: {np.average(SM15_metrics, weights=sizes):.4f}")
+
         t_stat, p_value, df = ttest_ind(FSRS_metrics, SM15_metrics, weights=(sizes, sizes))
 
-        print(f"metric: {metric}, t-statistic: {t_stat}, p-value: {p_value}, df: {df}")
+        print(f"t-statistic: {t_stat}, p-value: {p_value}, df: {df}")
 
         if p_value < 0.05:
             print("The performance difference between FSRS and SM15 is statistically significant.")

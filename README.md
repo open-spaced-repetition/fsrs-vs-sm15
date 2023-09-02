@@ -16,6 +16,17 @@ Due to the difference between the workflow of SuperMemo and Anki, it is not easy
 - To ensure FSRS has the same information as SM-15, I implement an [online learning](https://en.wikipedia.org/wiki/Online_machine_learning) version of FSRS. In FSRS online, each repetition is only used once. The repetitions are sorted by the review date ascending. Then FSRS will make prediction one by one and update the model after each prediction. So FSRS online has zero knowledge of the future reviews as SM-15 does.
 - The results are based on the data from a small group of people. It may be different from the result of other SuperMemo users.
 
+## Result
+
+Total users: 17
+
+Total repetitions: 257,313
+
+| Algorithm | Log Loss | RMSE | Universal Metric |
+| --- | --- | --- | --- |
+| FSRS |0.3819 | 0.3321 | 0.0443 |
+| SM-15 | 0.4323 | 0.3489 | 0.0771 |
+
 ## Why not SM-18?
 
 Due to the limitation of SuperMemo 18, I can't export the predictions of SM-18. So I can't compare SM-18 with FSRS. If you know how to export the predictions of SM-18, please let me know.
