@@ -27,6 +27,8 @@ Total repetitions: 257,313
 | FSRS |0.3819 | 0.3321 | 0.0443 |
 | SM-15 | 0.4323 | 0.3489 | 0.0771 |
 
+Smaller is better.
+
 ## Why not SM-18?
 
 Due to the limitation of SuperMemo 18, I can't export the predictions of SM-18. So I can't compare SM-18 with FSRS. If you know how to export the predictions of SM-18, please let me know.
