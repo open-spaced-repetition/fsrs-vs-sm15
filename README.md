@@ -33,6 +33,8 @@ Smaller is better.
 
 Due to the limitation of SuperMemo 18, I can't export the predictions of SM-18. So I can't compare SM-18 with FSRS. If you know how to export the predictions of SM-18, please let me know.
 
+Here is the comparison among FSRS, SM-16 and SM-17: [fsrs-vs-sm17](https://github.com/open-spaced-repetition/fsrs-vs-sm17)
+
 ## Contributors
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
