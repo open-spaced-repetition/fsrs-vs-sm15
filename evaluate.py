@@ -30,6 +30,7 @@ if __name__ == "__main__":
 
     sizes = np.array(sizes)
     print(f"Total size: {sizes.sum()}")
+    sizes = np.log(sizes)
     for metric in ("LogLoss", "RMSE",  "UniversalMetric", "RMSE(bins)"):
         print(f"metric: {metric}")
 
