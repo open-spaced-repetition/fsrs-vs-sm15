@@ -18,22 +18,20 @@ Due to the difference between the workflow of SuperMemo and Anki, it is not easy
 
 ## Result
 
-Total users: 17
+Total users: 16
 
-Total repetitions: 257,313
+Total repetitions: 257,077
 
-| Algorithm | Log Loss | RMSE | Universal Metric |
-| --- | --- | --- | --- |
-| FSRS |0.3819 | 0.3321 | 0.0443 |
-| SM-15 | 0.4323 | 0.3489 | 0.0771 |
+| Algorithm | Log Loss | RMSE | Universal Metric | RMSE(bins) |
+| --- | --- | --- | --- | --- |
+| FSRS |0.3812 | 0.3318 | 0.0436 | 0.0703 |
+| SM-15 | 0.4325 | 0.3490 | 0.0775 | 0.1174 |
 
 Smaller is better.
 
 ## Why not SM-18?
 
 Due to the limitation of SuperMemo 18, I can't export the predictions of SM-18. So I can't compare SM-18 with FSRS. If you know how to export the predictions of SM-18, please let me know.
-
-Here is the comparison among FSRS, SM-16 and SM-17: [fsrs-vs-sm17](https://github.com/open-spaced-repetition/fsrs-vs-sm17)
 
 ## Contributors
 

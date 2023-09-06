@@ -27,21 +27,20 @@ if __name__ == "__main__":
             SM15.append(result["SM15"])
             sizes.append(result["size"])
 
-    print(f"Total users: {len(sizes)}")
 
     sizes = np.array(sizes)
     print(f"Total size: {sizes.sum()}")
-    for metric in ("log_loss", "RMSE", "universal_metric"):
+    for metric in ("LogLoss", "RMSE",  "UniversalMetric", "RMSE(bins)"):
         print(f"metric: {metric}")
 
         FSRS_metrics = np.array([item[metric] for item in FSRS])
         SM15_metrics = np.array([item[metric] for item in SM15])
 
-        print(f"FSRS mean: {np.average(FSRS_metrics, weights=sizes):.4f}, SM17 mean: {np.average(SM15_metrics, weights=sizes):.4f}")
+        print(f"FSRS mean: {np.average(FSRS_metrics, weights=sizes):.4f}, SM15 mean: {np.average(SM15_metrics, weights=sizes):.4f}")
 
         t_stat, p_value, df = ttest_ind(FSRS_metrics, SM15_metrics, weights=(sizes, sizes))
 
-        print(f"t-statistic: {t_stat}, p-value: {p_value}, df: {df}")
+        print(f"metric: {metric}, t-statistic: {t_stat}, p-value: {p_value}, df: {df}")
 
         if p_value < 0.05:
             print("The performance difference between FSRS and SM15 is statistically significant.")
@@ -57,7 +56,7 @@ Cohen's d: -0.21759828991391236
 metric: log_loss, t-statistic: -122.84357886657645, p-value: 0.0, df: 514624.0
 The performance difference between FSRS and SM15 is statistically significant.
 Cohen's d: -0.34248175325355346
-metric: universal_metric, t-statistic: -329.0947639176226, p-value: 0.0, df: 514624.0
+metric: universal_metric, t-statistic: -328.8964520078117, p-value: 0.0, df: 514624.0
 The performance difference between FSRS and SM15 is statistically significant.
-Cohen's d: -0.9174997405072971
+Cohen's d: -0.9169468568222914
 '''

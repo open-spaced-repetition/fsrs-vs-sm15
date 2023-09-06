@@ -212,82 +212,108 @@ def train(revlogs):
 
     revlogs['difficulty'] = d
     revlogs['stability'] = s
-    revlogs['p'] = r
+    revlogs['R (FSRS)'] = r
 
     return revlogs
 
 
-def compare(revlogs):
-    fsrs_metrics = {}
-    sm15_metrics = {}
-    revlogs['sm15_p'] = 1 - revlogs['expFI'] / 100
-    FSRS_RMSE = mean_squared_error(revlogs['y'], revlogs['p'], squared=False)
-    SM15_RMSE = mean_squared_error(revlogs['y'], revlogs['sm15_p'], squared=False)
+def evaluate(revlogs):
+    sm15_rmse = mean_squared_error(
+        revlogs["y"], revlogs["R (SM15)"], squared=False)
+    fsrs_rmse = mean_squared_error(
+        revlogs['y'], revlogs['R (FSRS)'], squared=False)
+    sm15_logloss = log_loss(revlogs["y"], revlogs["R (SM15)"])
+    fsrs_logloss = log_loss(revlogs['y'], revlogs['R (FSRS)'])
+    return {
+        "FSRS": {
+            "RMSE": fsrs_rmse,
+            "LogLoss": fsrs_logloss,
+        },
+        "SM15": {
+            "RMSE": sm15_rmse,
+            "LogLoss": sm15_logloss,
+        }
+    }
 
-    fsrs_metrics['RMSE'] = FSRS_RMSE
-    sm15_metrics['RMSE'] = SM15_RMSE
 
-    FSRS_log_loss = log_loss(revlogs['y'], revlogs['p'])
-    SM15_log_loss = log_loss(revlogs['y'], revlogs['sm15_p'])
-
-    fsrs_metrics['log_loss'] = FSRS_log_loss
-    sm15_metrics['log_loss'] = SM15_log_loss
-
-    cross_comparison = revlogs[['sm15_p', 'p', 'y']].copy()
+def cross_comparsion(revlogs, algoA, algoB):
+    if algoA != algoB:
+        cross_comparison = revlogs[[f'R ({algoA})', f'R ({algoB})', 'y']].copy()
+        bin_algo = (algoA, algoB,)
+        pair_algo = [(algoA, algoB), (algoB, algoA)]
+    else:
+        cross_comparison = revlogs[[f'R ({algoA})', 'y']].copy()
+        bin_algo = (algoA,)
+        pair_algo = [(algoA, algoA)]
 
     def get_bin(x, bins=20):
-        return (np.log(np.exp(np.log(bins) * x).round()) / np.log(bins)).round(3)
+        return (np.log(np.minimum(np.floor(np.exp(np.log(bins+1) * x) - 1), bins-1) + 1) / np.log(bins)).round(3)
 
-    cross_comparison['SM15_B-W'] = cross_comparison['sm15_p'] - cross_comparison['y']
-    cross_comparison['SM15_bin'] = cross_comparison['sm15_p'].map(get_bin)
-    cross_comparison['FSRS_B-W'] = cross_comparison['p'] - cross_comparison['y']
-    cross_comparison['FSRS_bin'] = cross_comparison['p'].map(get_bin)
+    for algo in bin_algo:
+        cross_comparison[f'{algo}_B-W'] = cross_comparison[f'R ({algo})'] - \
+            cross_comparison['y']
+        cross_comparison[f'{algo}_bin'] = cross_comparison[f'R ({algo})'].map(
+            get_bin)
 
     fig = plt.figure(figsize=(6, 6))
     ax = fig.gca()
-    ax.axhline(y = 0.0, color = 'black', linestyle = '-')
+    ax.axhline(y=0.0, color='black', linestyle='-')
 
-    cross_comparison_group = cross_comparison.groupby(by='SM15_bin').agg({'y': ['mean'], 'FSRS_B-W': ['mean'], 'p': ['mean', 'count']})
-    universal_metric = mean_squared_error(cross_comparison_group['y', 'mean'], cross_comparison_group['p', 'mean'], sample_weight=cross_comparison_group['p', 'count'], squared=False)
-    fsrs_metrics['universal_metric'] = universal_metric
-    cross_comparison_group['p', 'percent'] = cross_comparison_group['p', 'count'] / cross_comparison_group['p', 'count'].sum()
-    ax.scatter(cross_comparison_group.index, cross_comparison_group['FSRS_B-W', 'mean'], s=cross_comparison_group['p', 'percent'] * 1024, alpha=0.5)
-    ax.plot(cross_comparison_group['FSRS_B-W', 'mean'], label=f'FSRS by SM15, UM={universal_metric:.4f}')
+    universal_metric_list = []
 
-    cross_comparison_group = cross_comparison.groupby(by='FSRS_bin').agg({'y': ['mean'], 'SM15_B-W': ['mean'], 'sm15_p': ['mean', 'count']})
-    universal_metric = mean_squared_error(cross_comparison_group['y', 'mean'], cross_comparison_group['sm15_p', 'mean'], sample_weight=cross_comparison_group['sm15_p', 'count'], squared=False)
-    sm15_metrics['universal_metric'] = universal_metric
-    cross_comparison_group['sm15_p', 'percent'] = cross_comparison_group['sm15_p', 'count'] / cross_comparison_group['sm15_p', 'count'].sum()
-    ax.scatter(cross_comparison_group.index, cross_comparison_group['SM15_B-W', 'mean'], s=cross_comparison_group['sm15_p', 'percent'] * 1024, alpha=0.5)
-    ax.plot(cross_comparison_group['SM15_B-W', 'mean'], label=f'SM15 by FSRS, UM={universal_metric:.4f}')
+    for algoA, algoB in pair_algo:
+        cross_comparison_group = cross_comparison.groupby(by=f'{algoA}_bin').agg(
+            {'y': ['mean'], f'{algoB}_B-W': ['mean'], f'R ({algoB})': ['mean', 'count']})
+        universal_metric = mean_squared_error(cross_comparison_group['y', 'mean'], cross_comparison_group[
+                                              f'R ({algoB})', 'mean'], sample_weight=cross_comparison_group[f'R ({algoB})', 'count'], squared=False)
+        cross_comparison_group[f'R ({algoB})', 'percent'] = cross_comparison_group[f'R ({algoB})',
+                                                                                   'count'] / cross_comparison_group[f'R ({algoB})', 'count'].sum()
+        ax.scatter(cross_comparison_group.index,
+                   cross_comparison_group[f'{algoB}_B-W', 'mean'], s=cross_comparison_group[f'R ({algoB})', 'percent'] * 1024, alpha=0.5)
+        ax.plot(cross_comparison_group[f'{algoB}_B-W', 'mean'],
+                label=f'{algoB} by {algoA}, UM={universal_metric:.4f}')
+        universal_metric_list.append(universal_metric)
 
     ax.legend(loc='lower center')
     ax.grid(linestyle='--')
-    ax.set_title("SM15 vs FSRS")
+    ax.set_title(f"{algoA} vs {algoB}")
     ax.set_xlabel('Predicted R')
     ax.set_ylabel('B-W Metric')
     ax.set_xlim(0, 1)
     ax.set_xticks(np.arange(0, 1.1, 0.1))
-
     fig.show()
 
-    return {
-        'FSRS': fsrs_metrics,
-        'SM15': sm15_metrics
-    }
+    return universal_metric_list
 
 
 if __name__ == "__main__":
     for file in pathlib.Path('dataset').iterdir():
+        plt.close('all')
         if file.is_file() and file.suffix == '.txt':
+            if file.stem in map(lambda x: x.stem, pathlib.Path('result').iterdir()):
+                print(f'{file.stem} already exists, skip')
+                continue
             try:
                 _, user, year, month, day = file.stem.split('-')
             except:
                 continue
+            if pathlib.Path(f'result/{file.stem}.json').exists():
+                continue
             txt_to_csv(file)
             revlogs = data_preprocessing(file.with_suffix('.csv'))
             revlogs = train(revlogs)
-            result = compare(revlogs)
+            revlogs['R (SM15)'] = 1 - revlogs['expFI'] / 100
+            result = evaluate(revlogs)
+            fsrs_by_sm15, sm15_by_fsrs = cross_comparsion(
+                revlogs, 'SM15', 'FSRS')
+            result['FSRS']['UniversalMetric'] = fsrs_by_sm15
+            result['SM15']['UniversalMetric'] = sm15_by_fsrs
+            fsrs_rmse_bin = cross_comparsion(
+                revlogs, 'FSRS', 'FSRS')[0]
+            sm15_rmse_bin = cross_comparsion(
+                revlogs, 'SM15', 'SM15')[0]
+            result['FSRS']['RMSE(bins)'] = fsrs_rmse_bin
+            result['SM15']['RMSE(bins)'] = sm15_rmse_bin
             result['user'] = user
             result['date'] = f'{year}-{month}-{day}'
             result['size'] = revlogs.shape[0]
