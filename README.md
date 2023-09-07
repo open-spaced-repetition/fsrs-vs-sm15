@@ -3,7 +3,7 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-15-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-It is a simple comparsion between FSRS and SM-15. [compare.ipynb](./compare.ipynb) is the notebook for the comparsion. It has three features:
+It is a simple comparison between FSRS and SM-15. [compare.ipynb](./compare.ipynb) is the notebook for the comparison. It has three features:
 
 1. Filter out Topic and Concept in your `Repetition History.txt` and mask the Item title for privacy.
 2. Convert `Repetition History.txt` to a format that can be used in FSRS.
